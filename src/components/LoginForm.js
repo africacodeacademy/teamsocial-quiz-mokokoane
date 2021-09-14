@@ -17,9 +17,11 @@ const FormSignup = ({ submitForm }) => {
   return (
     <div>
       <form onSubmit={handleSubmit} className='form' noValidate>
+      <hr className="line"/> 
         <h1>
           mokokoane Quiz game.
         </h1>
+        <hr className="line"/> 
         <div className='form-inputs'>
           <label className='form-label'>User Name:</label>
           <input
