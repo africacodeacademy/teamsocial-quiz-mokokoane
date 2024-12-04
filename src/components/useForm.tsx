@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useForm = (callback, validate) => {
+
   const [values, setValues] = useState({
     username: '',
     
@@ -11,13 +12,14 @@ const useForm = (callback, validate) => {
   const handleChange = e => {
     const { name, value } = e.target;
     
+    
     setValues({
       ...values,
       [name]: value,
+      
     });
    
   };
-
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -25,15 +27,14 @@ const useForm = (callback, validate) => {
     setIsSubmitting(true);
 
   };
-
   useEffect(
     () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
         callback();
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [errors]
+    
+    [callback, errors, isSubmitting]
   );
 
   return { handleChange, handleSubmit, values, errors };

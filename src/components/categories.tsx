@@ -3,8 +3,9 @@ import countries from "./countries"
 import sport from "./Sport";
 import movies from "./movies";
 
-const Welcome=() => {
-    
+
+
+const Category=() => {
 
         function Content(){
 
@@ -12,7 +13,8 @@ const Welcome=() => {
         const playerName=screenName.replace('"','')
         const playername = playerName.replace('"','')
 
-            let history = useHistory();
+
+        let history = useHistory();
         const clickHandlerSport = () => history.push("./sport");
         const clickHandlerContries= () =>history.push("./countries");
         const clickHandlerMovies = () => history.push("./movies");
@@ -22,12 +24,10 @@ const Welcome=() => {
             <h1>welcome to quiz game:</h1>
              <p>Player: {playername}</p>
             
-            <p>choose a category to start</p>
+           <p>choose a category to start</p>
             <button onClick= {clickHandlerSport}>Sport</button>
             <button onClick= {clickHandlerContries}>Countries</button>
             <button onClick= {clickHandlerMovies}>Movies</button>
-            
-            
             </div>
         )
         }
@@ -48,4 +48,4 @@ const Welcome=() => {
 
 }
     
-export default Welcome;
+export default Category;

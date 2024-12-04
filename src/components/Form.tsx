@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FormSignup from './LoginForm';
-import Welcome from './categories';
+import Category from './categories';
 
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -13,7 +13,7 @@ const Form = () => {
         {!isSubmitted ? (
           <FormSignup submitForm={submitForm} />
         ) : (
-          <Welcome />
+          <Category />
         )}
      
     </>
